@@ -1,0 +1,6 @@
+/.debhelper
+/wsmancli
+/debhelper-*
+/*.debhelper.log
+/*.substvars
+/files

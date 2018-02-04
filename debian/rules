@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+DPKG_EXPORT_BUILDFLAGS=1
+include /usr/share/dpkg/buildflags.mk
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f Makefile.in aclocal.m4 compile config.guess config.h.in config.sub configure depcomp examples/Makefile.in examples/cpp/Makefile.in install-sh ltmain.sh man/Makefile.in missing src/Makefile.in tests/Makefile.in tests/cunit/Makefile.in tests/interop/Makefile.in
+
+override_dh_auto_configure:
+	./bootstrap
+	dh_auto_configure -- --disable-more-warnings
+
+%:
+	dh $@ 

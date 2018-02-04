@@ -1,0 +1,14 @@
+Source: wsmancli
+Section: admin
+Priority: extra
+Maintainer: Balazs Toth <zsalab@zettasystem.com>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libopenwsman-dev (>= 2.6.0), libcurl4-openssl-dev
+Standards-Version: 3.9.5
+Homepage: http://openwsman.github.io/
+
+Package: wsmancli
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Opensource Implementation of WS-Management - Command line utility
+ Part of Openwsman, an Opensource Implementation of WS-Management. This
+ package contains the command line utility to interact with a wsman server.
